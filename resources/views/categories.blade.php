@@ -49,6 +49,8 @@
 
     <h1>Categories</h2>
 
+        @if (Illuminate\Support\Facades\Auth::user()->role == 'user')
+        @else
         <div class="create">
             <button class="btn" onclick="my_modal_1.showModal()" id="buat">Tambah</button>
             <dialog id="my_modal_1" class="modal">
@@ -71,6 +73,7 @@
                 </div>
             </dialog>
         </div>
+        @endif
 
         <div class="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
             <table class="table">
