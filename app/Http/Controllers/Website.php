@@ -12,6 +12,9 @@ class Website extends Controller
 {
     public function dashboard()
     {
+        if(!Auth::check()){
+            return redirect('/signin');
+        }
         if (Auth::user()->role == 'admin') {
             return redirect('/categories');
         } else {
