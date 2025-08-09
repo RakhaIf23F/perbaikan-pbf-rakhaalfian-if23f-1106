@@ -13,9 +13,9 @@ class Website extends Controller
     public function dashboard()
     {
         if (Auth::user()->role == 'admin') {
-            return 'Admin: ' . Auth::user()->name;
+            return redirect('/categories');
         } else {
-            return 'User: ' . Auth::user()->name;
+            return redirect('/products');
         }
     }
 
